@@ -1,0 +1,111 @@
+<h1>Formulário Completo</h1>
+
+<form action="processar.php" method="POST">
+
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+        
+        <label>Nome:<br>
+            <input type="text" name="nome">
+        </label><br><br>
+        
+        <label>Sobrenome:<br>
+            <input type="text" name="sobrenome">
+        </label><br><br>
+        
+        <label>Email:<br>
+            <input type="text" name="email">
+        </label><br><br>
+        
+        <label>Telefone:<br>
+            <input type="text" name="telefone">
+        </label><br><br>
+        
+        <label>Data de Nascimento:<br>
+            <input type="date" name="data_nascimento">
+        </label><br>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend>Endereço</legend>
+        
+        <label>Rua:<br>
+            <input type="text" name="rua">
+        </label><br><br>
+        
+        <label>Número:<br>
+            <input type="text" name="numero">
+        </label><br><br>
+        
+        <label>Cidade:<br>
+            <input type="text" name="cidade">
+        </label><br><br>
+        
+        <label>Estado:<br>
+            <input type="text" name="estado">
+        </label><br><br>
+        
+        <label>CEP:<br>
+            <input type="text" name="cep">
+        </label><br>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend>Preferências</legend>
+        
+        <label>Cor Favorita:<br>
+            <select name="cor_favorita">
+                <option value="vermelho">Vermelho</option>
+                <option value="azul">Azul</option>
+                <option value="verde">Verde</option>
+                <option value="preto">Preto</option>
+            </select>
+        </label><br><br>
+        
+        <label>Gênero:</label><br>
+        <label><input type="radio" name="genero" value="masculino"> Masculino</label><br>
+        <label><input type="radio" name="genero" value="feminino"> Feminino</label><br><br>
+        
+        <label>Interesses:</label><br>
+        <label><input type="checkbox" name="interesses" value="esportes"> Esportes</label><br>
+        <label><input type="checkbox" name="interesses" value="musica"> Música</label><br>
+        <label><input type="checkbox" name="interesses" value="tecnologia"> Tecnologia</label><br>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend>Upload de Arquivos</legend>
+        
+        <label>Escolha um arquivo (Imagem ou PDF):<br>
+            <input type="file" name="arquivo" accept="image/*,.pdf">
+        </label><br>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend>Informações de Login</legend>
+        
+        <label>Nome de Usuário:<br>
+            <input type="text" name="usuario">
+        </label><br><br>
+        
+        <label>Senha:<br>
+            <input type="password" name="senha">
+        </label><br><br>
+        
+        <label>Confirmar Senha:<br>
+            <input type="password" name="confirmar_senha">
+        </label><br>
+    </fieldset>
+
+    <br>
+
+    <input type="submit" value="Enviar">
+
+</form>
