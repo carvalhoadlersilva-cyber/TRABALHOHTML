@@ -1,0 +1,100 @@
+/* ========================================================
+   ESTILOS GERAIS DA PÁGINA
+   ======================================================== */
+
+/* Configuração do fundo, fonte principal e margens da página */
+body {
+    background-color: #fff8f0; /* Um tom suave de bege/creme */
+    font-family: Arial, sans-serif; /* Fonte legível e simples */
+    margin: 20px 40px; /* Margem superior/inferior de 20px e lateral de 40px */
+    color: #333333; /* Cor do texto em cinza escuro para facilitar a leitura */
+}
+
+/* Estilização dos títulos principais e secundários */
+h1 {
+    color: #4a2c2a; /* Cor marrom-chocolate */
+    text-align: center;
+}
+
+h2 {
+    color: #6b3e2e; /* Marrom levemente mais claro para as seções */
+    border-bottom: 2px solid #6b3e2e; /* Linha decorativa abaixo do título */
+    padding-bottom: 5px;
+}
+
+/* Estilo para as linhas divisórias */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #d3b8ae;
+}
+
+/* Estilo para os links do menu e das fontes */
+a {
+    color: #8b0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline; /* Destaca o link ao passar o mouse */
+}
+
+
+/* ========================================================
+   ESTILIZAÇÃO DA TABELA DE PREÇOS
+   ======================================================== */
+
+/* Configuração geral da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Une as bordas das células */
+    margin-top: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave ao redor da tabela */
+}
+
+/* Estilização dos cabeçalhos da tabela (th) e das células de dados (td) */
+th, td {
+    border: 1px solid #cccccc; /* Borda cinza clara simples */
+    padding: 10px;
+    text-align: left; /* Alinhamento padrão à esquerda */
+}
+
+/* Estilo exclusivo do cabeçalho da tabela */
+th {
+    background-color: #4a2c2a; /* Fundo marrom escuro */
+    color: #ffffff; /* Texto branco */
+    font-weight: bold;
+}
+
+
+/* ========================================================
+   CLASSES PARA DIFERENCIAR TIPOS DE INGREDIENTES
+   ======================================================== */
+
+/* Linhas com ingredientes líquidos */
+.ingrediente-liquido {
+    background-color: #e8f4f8; /* Azul claro suave */
+}
+
+/* Linhas com ingredientes sólidos */
+.ingrediente-solido {
+    background-color: #fff9e6; /* Amarelo bem claro */
+}
+
+
+/* ========================================================
+   ESTILIZAÇÕES ESPECÍFICAS PARA COLUNAS DE VALORES
+   ======================================================== */
+
+/* Alinha o texto das colunas de valores/preços para a direita */
+.coluna-preco {
+    text-align: right;
+}
+
+/* Destaque para o preço total estimado */
+.valor-destaque {
+    font-weight: bold;
+    color: #2e7d32; /* Cor verde para destacar o valor numérico */
+}

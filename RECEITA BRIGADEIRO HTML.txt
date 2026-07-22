@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Receita de Brigadeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Receita de Brigadeiro Tradicional</h1>
+    <hr>
+
+    <p>
+        <a href="#ingredientes" target="_self">Ir para Ingredientes</a> | 
+        <a href="#preparo" target="_self">Ir para Modo de Preparo</a> | 
+        <a href="#precos" target="_self">Ir para Preço dos Ingredientes</a>
+    </p>
+    <hr>
+
+    <h2 id="ingredientes">Ingredientes</h2>
+    <ul>
+        <li>1 lata ou caixinha de <a href="https://goo.su/cfZVj97" target="_blank">Leite MOÇA®</a></li>
+        <li>3 colheres (sopa) de <a href="https://goo.su/mkboCX" target="_blank">Chocolate em Pó NESTLÉ CHOCOLATERIA</a></li>
+        <li>1 colher (sopa) de <a href="https://goo.su/KE70geB" target="_blank">manteiga</a></li>
+        <li>1 xícara (chá) de <a href="https://goo.su/iPCR" target="_blank">chocolate granulado</a></li>
+    </ul>
+
+    <hr>
+
+    <h2 id="preparo">Modo de Preparo</h2>
+    <ol>
+        <li>Em uma panela, coloque o Leite MOÇA com o Chocolate em Pó CHOCOLATERIA e a manteiga.</li>
+        <li>Misture bem e leve ao fogo baixo, mexendo sempre até desprender do fundo da panela (cerca de 10 minutos).</li>
+        <li>Retire do fogo, passe para um prato untado com manteiga e deixe esfriar.</li>
+        <li>Com as mãos untadas, enrole em bolinhas e passe-as no granulado.</li>
+    </ol>
+
+    <hr>
+
+    <h2 id="precos">Preço dos Ingredientes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Unidade de Medida</th>
+                <th class="coluna-preco">Preço Unitário (R$)</th>
+                <th>Quantidade na Receita</th>
+                <th class="coluna-preco">Preço Total Estimado (R$)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="ingrediente-liquido">
+                <td>Leite MOÇA®</td>
+                <td>Lata (395g)</td>
+                <td class="coluna-preco">8,50</td>
+                <td>1 lata</td>
+                <td class="coluna-preco valor-destaque">8,50</td>
+            </tr>
+            <tr class="ingrediente-solido">
+                <td>Chocolate em Pó NESTLÉ</td>
+                <td>Caixa (200g)</td>
+                <td class="coluna-preco">12,00</td>
+                <td>3 colheres (sopa) (~45g)</td>
+                <td class="coluna-preco valor-destaque">2,70</td>
+            </tr>
+            <tr class="ingrediente-solido">
+                <td>Manteiga</td>
+                <td>Pote (200g)</td>
+                <td class="coluna-preco">10,00</td>
+                <td>1 colher (sopa) (~15g)</td>
+                <td class="coluna-preco valor-destaque">0,75</td>
+            </tr>
+            <tr class="ingrediente-solido">
+                <td>Chocolate Granulado</td>
+                <td>Pacote (150g)</td>
+                <td class="coluna-preco">6,00</td>
+                <td>1 xícara (chá) (~120g)</td>
+                <td class="coluna-preco valor-destaque">4,80</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
