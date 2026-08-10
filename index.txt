@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Completo</title>
+    
+    <!-- AQUI ESTÁ O VÍNCULO COM O ARQUIVO CSS -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <h1>Formulário Completo</h1>
+
+    <form action="processar.php" method="POST">
+
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            
+            <label>Nome:
+                <input type="text" name="nome">
+            </label>
+            
+            <label>Sobrenome:
+                <input type="text" name="sobrenome">
+            </label>
+            
+            <label>Email:
+                <input type="text" name="email">
+            </label>
+            
+            <label>Telefone:
+                <input type="text" name="telefone">
+            </label>
+            
+            <label>Data de Nascimento:
+                <input type="date" name="data_nascimento">
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Endereço</legend>
+            
+            <label>Rua:
+                <input type="text" name="rua">
+            </label>
+            
+            <label>Número:
+                <input type="text" name="numero">
+            </label>
+            
+            <label>Cidade:
+                <input type="text" name="cidade">
+            </label>
+            
+            <label>Estado:
+                <input type="text" name="estado">
+            </label>
+            
+            <label>CEP:
+                <input type="text" name="cep">
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferências</legend>
+            
+            <label>Cor Favorita:
+                <select name="cor_favorita">
+                    <option value="vermelho">Vermelho</option>
+                    <option value="azul">Azul</option>
+                    <option value="verde">Verde</option>
+                    <option value="preto">Preto</option>
+                </select>
+            </label>
+            
+            <label>Gênero:</label>
+            <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+            <label><input type="radio" name="genero" value="feminino"> Feminino</label>
+            
+            <label>Interesses:</label>
+            <label><input type="checkbox" name="interesses" value="esportes"> Esportes</label>
+            <label><input type="checkbox" name="interesses" value="musica"> Música</label>
+            <label><input type="checkbox" name="interesses" value="tecnologia"> Tecnologia</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Upload de Arquivos</legend>
+            
+            <label>Escolha um arquivo (Imagem ou PDF):
+                <input type="file" name="arquivo" accept="image/*,.pdf">
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Informações de Login</legend>
+            
+            <label>Nome de Usuário:
+                <input type="text" name="usuario">
+            </label>
+            
+            <label>Senha:
+                <input type="password" name="senha">
+            </label>
+            
+            <label>Confirmar Senha:
+                <input type="password" name="confirmar_senha">
+            </label>
+        </fieldset>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+</body>
+</html>
