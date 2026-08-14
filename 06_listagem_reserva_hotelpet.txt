@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Pet - Reservas</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background-color: #fff; color: #000; }
+    header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding: 10px 20px; }
+    header h1 { margin: 0; font-size: 24px; }
+    .user-profile { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #000; }
+    .user-profile img { border-radius: 50%; width: 40px; height: 40px; border: 1px solid #000; }
+    .container { display: flex; min-height: calc(100vh - 61px); }
+    nav { width: 200px; border-right: 1px solid #000; padding: 20px; }
+    nav ul { list-style: none; padding: 0; margin: 0; }
+    nav li { margin-bottom: 12px; }
+    nav a { text-decoration: none; color: #000; font-weight: bold; }
+    main { flex: 1; padding: 20px; }
+    fieldset { border: 1px solid #000; margin-bottom: 20px; padding: 15px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    th, td { border: 1px solid #000; padding: 8px; text-align: left; }
+    .btn { padding: 6px 12px; border: 1px solid #000; background-color: #eee; text-decoration: none; color: #000; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hotel Pet</h1>
+    <a href="editar_perfil.html" class="user-profile">
+      <img src="perfil_gerente.png" alt="Foto do Gerente">
+      <span>João da Silva (Gerente)</span>
+    </a>
+  </header>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="index.html">Pets</a></li>
+        <li><a href="listagem_reservas.html">Reservas</a></li>
+        <li><a href="listagem_usuarios.html">Usuários</a></li>
+        <li><a href="configuracoes.html">Configurações</a></li>
+        <li><a href="login.html">Sair</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>Reservas</h2>
+      <p><a href="nova_reserva.html" class="btn">Nova reserva</a></p>
+
+      <fieldset>
+        <legend>Pesquisar Reservas</legend>
+        <form>
+          <label>ID: <input type="text" name="id" size="5"></label>
+          <label>Proprietário: <input type="text" name="proprietario"></label>
+          <label>Pet: <input type="text" name="pet"></label>
+          <label>Chegada: <input type="date" name="chegada"></label>
+          <label>Partida: <input type="date" name="partida"></label>
+          <label>Status: 
+            <select name="status">
+              <option value="">Todos</option>
+              <option value="Reservada">Reservada</option>
+              <option value="Em progresso">Em progresso</option>
+              <option value="Finalizada">Finalizada</option>
+            </select>
+          </label>
+          <br><br>
+          <button type="submit">Pesquisar</button>
+          <button type="reset">Limpar</button>
+        </form>
+      </fieldset>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Proprietário</th>
+            <th>Pet</th>
+            <th>Chegada</th>
+            <th>Partida</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1234</td>
+            <td>José da Silva</td>
+            <td>Max</td>
+            <td>20/08/2026</td>
+            <td>25/08/2026</td>
+            <td>Reservada</td>
+            <td>R$ 250,00</td>
+            <td>
+              <a href="ver_reserva.html">Visualizar</a> | 
+              <a href="editar_reserva.html">Editar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>5678</td>
+            <td>Maria Oliveira</td>
+            <td>Ginger</td>
+            <td>01/08/2026</td>
+            <td>05/08/2026</td>
+            <td>Finalizada</td>
+            <td>R$ 200,00</td>
+            <td>
+              <a href="ver_reserva.html">Visualizar</a> | 
+              <!-- Gerente pode editar mesmo se Finalizada -->
+              <a href="editar_reserva.html">Editar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</body>
+</html>

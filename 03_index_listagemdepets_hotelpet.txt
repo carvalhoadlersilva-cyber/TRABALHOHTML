@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Pet - Pets</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background-color: #fff; color: #000; }
+    header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding: 10px 20px; }
+    header h1 { margin: 0; font-size: 24px; }
+    .user-profile { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #000; }
+    .user-profile img { border-radius: 50%; width: 40px; height: 40px; border: 1px solid #000; }
+    .container { display: flex; min-height: calc(100vh - 61px); }
+    nav { width: 200px; border-right: 1px solid #000; padding: 20px; }
+    nav ul { list-style: none; padding: 0; margin: 0; }
+    nav li { margin-bottom: 12px; }
+    nav a { text-decoration: none; color: #000; font-weight: bold; }
+    main { flex: 1; padding: 20px; }
+    fieldset { border: 1px solid #000; margin-bottom: 20px; padding: 15px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    th, td { border: 1px solid #000; padding: 8px; text-align: left; }
+    .btn { padding: 6px 12px; border: 1px solid #000; background-color: #eee; text-decoration: none; color: #000; inline-block; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hotel Pet</h1>
+    <a href="editar_perfil.html" class="user-profile">
+      <img src="perfil_gerente.png" alt="Foto do Gerente">
+      <span>João da Silva (Gerente)</span>
+    </a>
+  </header>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="index.html">Pets</a></li>
+        <li><a href="listagem_reservas.html">Reservas</a></li>
+        <li><a href="listagem_usuarios.html">Usuários</a></li>
+        <li><a href="configuracoes.html">Configurações</a></li>
+        <li><a href="login.html">Sair</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p>Home / Pets</p>
+      <h2>Pets</h2>
+      <p><a href="novo_pet.html" class="btn">Novo Pet</a></p>
+      
+      <fieldset>
+        <legend>Pesquisar Pets</legend>
+        <form>
+          <label>ID: <input type="text" name="id" size="5"></label>
+          <label>Nome: <input type="text" name="nome"></label>
+          <label>Tipo: 
+            <select name="tipo">
+              <option value="">Todos</option>
+              <option value="Cachorro">Cachorro</option>
+              <option value="Gato">Gato</option>
+            </select>
+          </label>
+          <label>Raça: <input type="text" name="raca"></label>
+          <label>Tamanho: <input type="text" name="tamanho" size="10"></label>
+          <br><br>
+          <button type="submit">Pesquisar</button>
+          <button type="reset">Limpar</button>
+        </form>
+      </fieldset>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Foto</th>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Raça</th>
+            <th>Tamanho</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1234</td>
+            <td><img src="max.png" alt="Max" width="50" height="50"></td>
+            <td>Max</td>
+            <td>Cachorro</td>
+            <td>Pastor Alemão</td>
+            <td>Grande</td>
+            <td>
+              <a href="editar_pet.html">Editar</a> | 
+              <a href="ver_pet.html">Visualizar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>5678</td>
+            <td><img src="ginger.png" alt="Ginger" width="50" height="50"></td>
+            <td>Ginger</td>
+            <td>Gato</td>
+            <td>Siamês</td>
+            <td>Pequeno</td>
+            <td>
+              <a href="editar_pet.html">Editar</a> | 
+              <a href="ver_pet.html">Visualizar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</body>
+</html>

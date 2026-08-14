@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Pet - Nova Reserva</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background-color: #fff; color: #000; }
+    header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding: 10px 20px; }
+    header h1 { margin: 0; font-size: 24px; }
+    .user-profile { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #000; }
+    .user-profile img { border-radius: 50%; width: 40px; height: 40px; border: 1px solid #000; }
+    .container { display: flex; min-height: calc(100vh - 61px); }
+    nav { width: 200px; border-right: 1px solid #000; padding: 20px; }
+    nav ul { list-style: none; padding: 0; margin: 0; }
+    nav li { margin-bottom: 12px; }
+    nav a { text-decoration: none; color: #000; font-weight: bold; }
+    main { flex: 1; padding: 20px; }
+    .form-group { margin-bottom: 12px; }
+    label { display: block; margin-bottom: 4px; }
+    input[type="date"], select, textarea { width: 100%; padding: 6px; border: 1px solid #000; box-sizing: border-box; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hotel Pet</h1>
+    <a href="editar_perfil.html" class="user-profile">
+      <img src="perfil_gerente.png" alt="Foto do Gerente">
+      <span>João da Silva (Gerente)</span>
+    </a>
+  </header>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="index.html">Pets</a></li>
+        <li><a href="listagem_reservas.html">Reservas</a></li>
+        <li><a href="listagem_usuarios.html">Usuários</a></li>
+        <li><a href="configuracoes.html">Configurações</a></li>
+        <li><a href="login.html">Sair</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>Fazer reserva</h2>
+      <form style="max-width: 400px;">
+        <div class="form-group">
+          <label>Pet*:</label>
+          <select name="pet" required>
+            <option value="">Selecione um Pet</option>
+            <option value="1234">Max (Cachorro)</option>
+            <option value="5678">Ginger (Gato)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Período - Início*:</label>
+          <input type="date" name="inicio" required>
+        </div>
+        <div class="form-group">
+          <label>Período - Fim*:</label>
+          <input type="date" name="fim" required>
+        </div>
+        <div class="form-group">
+          <label>Notas:</label>
+          <textarea name="notas" rows="4"></textarea>
+        </div>
+        
+        <p><strong>Total das diárias: R$ 0,00</strong></p>
+
+        <input type="submit" value="Salvar">
+        <input type="reset" value="Limpar">
+      </form>
+    </main>
+  </div>
+</body>
+</html>
