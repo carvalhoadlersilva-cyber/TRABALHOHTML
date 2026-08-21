@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Pet - Ver Reserva</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Sidebar / Menu Lateral -->
+    <aside class="app-sidebar">
+      <div class="sidebar-brand">Hotel Pet</div>
+      <ul class="sidebar-nav">
+        <li><a href="index.html">Pets</a></li>
+        <li><a href="listagem_reservas.html" class="active">Reservas</a></li>
+        <li><a href="listagem_usuarios.html">Usuários</a></li>
+        <li><a href="configuracoes.html">Configurações</a></li>
+        <li><a href="login.html">Sair</a></li>
+      </ul>
+    </aside>
+
+    <!-- Header / Cabeçalho Superior -->
+    <header class="app-header">
+      <div class="header-title">Painel de Controle</div>
+      <div class="header-user">
+        <a href="editar_perfil.html" style="display: flex; align-items: center; gap: 10px;">
+          <img src="perfil_gerente.png" alt="Foto do Gerente" class="avatar">
+          <span>João da Silva (Gerente)</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="app-main">
+      <div class="page-header">
+        <div>
+          <span style="color: var(--text-muted); font-size: 0.85rem;">Reservas / Detalhes</span>
+          <h2 class="page-title">Detalhes da Reserva #1234</h2>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <a href="editar_reserva.html" class="btn btn-primary">Editar esta reserva</a>
+        </div>
+      </div>
+
+      <!-- Card principal com os dados gerais -->
+      <div class="card">
+        <div class="card-title">Informações Gerais</div>
+        
+        <dl style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px 20px; margin: 0;">
+          <div>
+            <dt style="font-weight: bold; color: var(--text-muted); font-size: 0.85rem;">ID da Reserva</dt>
+            <dd style="margin: 4px 0 0 0;">1234</dd>
+          </div>
+
+          <div>
+            <dt style="font-weight: bold; color: var(--text-muted); font-size: 0.85rem;">Proprietário</dt>
+            <dd style="margin: 4px 0 0 0;">José da Silva</dd>
+          </div>
+
+          <div>
+            <dt style="font-weight: bold; color: var(--text-muted); font-size: 0.85rem;">Pet</dt>
+            <dd style="margin: 4px 0 0 0;"><strong>Max</strong></dd>
+          </div>
+
+          <div>
+            <dt style="font-weight: bold; color: var(--text-muted); font-size: 0.85rem;">Status</dt>
+            <dd style="margin: 4px 0 0 0;">Finalizada</dd>
+          </div>
+
+          <div>
+            <dt style="font-weight: bold; color: var(--text-muted); font-size: 0.85rem;">Data de Chegada</dt>
+            <dd style="margin: 4px 0 0 0;">20/08/2026</dd>
+          </div>
+
+          <div>
+            <dt style="font-weight: bold; color: var(--text-muted); font-size: 0.85rem;">Data de Partida</dt>
+            <dd style="margin: 4px 0 0 0;">25/08/2026</dd>
+          </div>
+
+          <div>
+            <dt style="font-weight: bold; color: var(--text-muted); font-size: 0.85rem;">Total</dt>
+            <dd style="margin: 4px 0 0 0; font-weight: bold; color: var(--primary-color);">R$ 250,00</dd>
+          </div>
+
+          <div>
+            <dt style="font-weight: bold; color: var(--text-muted); font-size: 0.85rem;">Notas do Cliente</dt>
+            <dd style="margin: 4px 0 0 0;">Alérgico a frango.</dd>
+          </div>
+
+          <div>
+            <dt style="font-weight: bold; color: var(--text-muted); font-size: 0.85rem;">Criado em</dt>
+            <dd style="margin: 4px 0 0 0; color: var(--text-muted); font-size: 0.9rem;">10/08/2026 14:00</dd>
+          </div>
+
+          <div>
+            <dt style="font-weight: bold; color: var(--text-muted); font-size: 0.85rem;">Atualizado em</dt>
+            <dd style="margin: 4px 0 0 0; color: var(--text-muted); font-size: 0.9rem;">25/08/2026 10:00</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Card com registros do Hotel -->
+      <div class="card" style="margin-top: 20px;">
+        <div class="card-title">Anotações da Equipe</div>
+        <p style="margin: 0; color: var(--text-color);">Pet super dócil, passeou diariamente no jardim e comeu bem todas as refeições.</p>
+
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid var(--border-color);">
+
+        <div class="card-title">Imagens da Estadia</div>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px;">
+          <img src="image_2.png" alt="Recepção e estadia" style="width: 150px; height: 110px; object-fit: cover; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+          <img src="estadia2.png" alt="Pet brincando" style="width: 150px; height: 110px; object-fit: cover; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+        </div>
+
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid var(--border-color);">
+
+        <div style="font-size: 0.95rem;">
+          <strong style="color: var(--text-muted);">Comprovante Anexado:</strong> 
+          <a href="recibo.pdf" target="_blank" class="btn btn-secondary btn-sm" style="margin-left: 8px;">📄 Recibo: recibo.pdf</a>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <a href="listagem_reservas.html" class="btn btn-secondary">Voltar</a>
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
