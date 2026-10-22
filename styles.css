@@ -24,6 +24,7 @@
   --border-radius: 6px;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 /* ==========================================================================
@@ -110,17 +111,27 @@ main.app-main {
   gap: 12px;
 }
 
+.header-user a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.header-user a:hover {
+  opacity: 0.85;
+  text-decoration: none;
+}
+
 .header-user img, .avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--border-color);
-}
-
-.header-user a {
-  color: var(--text-primary);
-  font-weight: 500;
 }
 
 /* Sidebar */
@@ -269,6 +280,7 @@ tbody tr:last-child td {
    ========================================================================== */
 .form-group {
   margin-bottom: 16px;
+  position: relative;
 }
 
 .form-group label {
@@ -295,6 +307,23 @@ tbody tr:last-child td {
   box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.15);
 }
 
+/* Estilos de Validação JS */
+.form-control.is-invalid {
+  border-color: var(--danger-color);
+  background-color: #fff9f9;
+}
+
+.form-control.is-invalid:focus {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
+}
+
+.form-feedback {
+  font-size: 0.8rem;
+  color: var(--danger-color);
+  margin-top: 4px;
+  display: block;
+}
+
 .form-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -316,6 +345,12 @@ tbody tr:last-child td {
 
 .btn:hover {
   text-decoration: none;
+}
+
+.btn:disabled, .btn.is-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .btn-primary {
@@ -344,68 +379,3 @@ tbody tr:last-child td {
 
 .btn-secondary:hover {
   background-color: #dee2e6;
-}
-
-.btn-danger {
-  background-color: var(--danger-color);
-  color: #ffffff;
-}
-
-.btn-danger:hover {
-  background-color: #c0392b;
-}
-
-.btn-sm {
-  padding: 4px 10px;
-  font-size: 0.8rem;
-}
-
-.actions-cell {
-  display: flex;
-  gap: 8px;
-}
-
-/* ==========================================================================
-   8. TELAS PÚBLICAS / AUTENTICAÇÃO (LOGIN E REGISTRO)
-   ========================================================================== */
-.auth-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: var(--bg-main);
-  padding: 20px;
-}
-
-.auth-card {
-  width: 100%;
-  max-width: 400px;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  padding: 30px;
-  box-shadow: var(--shadow-md);
-}
-
-.auth-header {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.auth-header h1 {
-  font-size: 1.6rem;
-  color: var(--primary-color);
-  margin-bottom: 6px;
-}
-
-.auth-header p {
-  color: var(--text-muted);
-  font-size: 0.88rem;
-}
-
-.auth-footer {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 0.88rem;
-  color: var(--text-muted);
-}
