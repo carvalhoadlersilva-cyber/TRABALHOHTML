@@ -2,121 +2,71 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hotel Pet - Ver Pet</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="js/navegacao.js"></script>
 </head>
 <body>
 
   <div class="app-container">
-    
+
     <!-- Sidebar / Menu Lateral -->
     <aside class="app-sidebar">
       <div class="sidebar-brand">Hotel Pet</div>
       <ul class="sidebar-nav">
-        <li><a href="index.html">Pets</a></li>
-        <li><a href="listagem_reservas.html">Reservas</a></li>
+        <li><a href="index.html" class="active">Pets</a></li>
         <li><a href="listagem_usuarios.html">Usuários</a></li>
         <li><a href="configuracoes.html">Configurações</a></li>
+        <li><a href="listagem_reservas.html">Reservas</a></li>
         <li><a href="login.html">Sair</a></li>
       </ul>
     </aside>
 
     <!-- Header / Cabeçalho Superior -->
     <header class="app-header">
-      <div class="header-title">Painel de Controle</div>
-      <!-- Gerenciado dinamicamente pelo app.js -->
-      <div class="header-user"></div>
+      <div class="header-user">
+        <a href="editor_perfil.html">
+          <img src="perfil_gerente.png" alt="Foto do Gerente" class="avatar">
+          <span>João da Silva</span>
+        </a>
+      </div>
     </header>
 
     <!-- Conteúdo Principal -->
     <main class="app-main">
-      <div class="page-header">
-        <div>
-          <span style="color: var(--text-muted); font-size: 0.85rem;">Pets / Detalhes</span>
-          <h2 class="page-title">Detalhes do Pet</h2>
+      <nav class="breadcrumb">Home / Pets / Ver Pet</nav>
+
+      <section class="painel">
+        <h2 class="page-title">Ver pet</h2>
+        <div class="toolbar">
+          <a href="editar_pet.html" class="btn btn-sm ico-edit">Editar</a>
+          <a href="index.html" class="btn btn-sm ico-trash">Deletar</a>
         </div>
-        <div style="display: flex; gap: 10px;">
-          <a href="editar_pet.html?id=1234" class="btn btn-primary">Editar</a>
-          <a href="index.html" class="btn btn-secondary">Deletar</a>
+
+        <dl class="detalhes">
+          <dt>Proprietário:</dt><dd>José da Silva</dd>
+          <dt>Id:</dt><dd>1234</dd>
+          <dt>Nome:</dt><dd>Max</dd>
+          <dt>Tipo:</dt><dd>Cachorro</dd>
+          <dt>Raça:</dt><dd>Pastor Alemão</dd>
+          <dt>Imagem</dt><dd><img src="max.png" alt="Foto do Pet" class="thumb thumb-grande"></dd>
+          <dt>Reservas:</dt>
+          <dd>
+            <ul class="lista-reservas">
+              <li><a href="ver_reserva.html" class="reserva-completa">10/01/2026 - 15/01/2026 (completa)</a></li>
+              <li><a href="ver_reserva.html" class="reserva-completa">01/08/2026 - 05/08/2026 (completa)</a></li>
+            </ul>
+          </dd>
+        </dl>
+
+        <div class="rodape-acoes">
+          <a href="index.html" class="btn ico-back">Voltar</a>
         </div>
-      </div>
-
-      <!-- Card com as Informações do Pet -->
-      <div class="card">
-        <div style="display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap;">
-          
-          <!-- Imagem do Pet -->
-          <div style="text-align: center;">
-            <img src="max.png" alt="Foto do Pet" style="width: 180px; height: 180px; object-fit: cover; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
-          </div>
-
-          <!-- Dados do Pet -->
-          <div style="flex: 1; min-width: 250px;">
-            <dl style="display: grid; grid-template-columns: auto 1fr; gap: 10px 20px; align-items: center;">
-              <dt style="font-weight: bold; color: var(--text-muted);">Proprietário:</dt>
-              <dd style="margin: 0;">José da Silva</dd>
-
-              <dt style="font-weight: bold; color: var(--text-muted);">ID:</dt>
-              <dd style="margin: 0;">1234</dd>
-
-              <dt style="font-weight: bold; color: var(--text-muted);">Nome:</dt>
-              <dd style="margin: 0;"><strong>Max</strong></dd>
-
-              <dt style="font-weight: bold; color: var(--text-muted);">Tipo:</dt>
-              <dd style="margin: 0;">Cachorro</dd>
-
-              <dt style="font-weight: bold; color: var(--text-muted);">Raça:</dt>
-              <dd style="margin: 0;">Pastor Alemão</dd>
-            </dl>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Tabela de Histórico de Reservas -->
-      <div class="card" style="margin-top: 20px;">
-        <div class="card-title">Histórico de Reservas</div>
-        <div class="table-responsive">
-          <table>
-            <thead>
-              <tr>
-                <th>ID Reserva</th>
-                <th>Período</th>
-                <th>Status</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>101</td>
-                <td>10/01/2026 - 15/01/2026</td>
-                <td>Finalizada</td>
-                <td>
-                  <a href="ver_reserva.html?id=101" class="btn btn-secondary btn-sm">Ver Detalhes</a>
-                </td>
-              </tr>
-              <tr>
-                <td>202</td>
-                <td>01/08/2026 - 05/08/2026</td>
-                <td>Finalizada</td>
-                <td>
-                  <a href="ver_reserva.html?id=202" class="btn btn-secondary btn-sm">Ver Detalhes</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div style="margin-top: 20px;">
-        <a href="index.html" class="btn btn-secondary btn-voltar">Voltar</a>
-      </div>
-
+      </section>
     </main>
 
   </div>
 
-  <!-- Inclusão do arquivo JS de navegação e lógica centralizada -->
-  <script src="app.js"></script>
 </body>
 </html>

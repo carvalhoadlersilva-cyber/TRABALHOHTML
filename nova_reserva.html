@@ -2,88 +2,75 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hotel Pet - Nova Reserva</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="js/navegacao.js"></script>
 </head>
 <body>
 
   <div class="app-container">
-    
+
     <!-- Sidebar / Menu Lateral -->
     <aside class="app-sidebar">
       <div class="sidebar-brand">Hotel Pet</div>
       <ul class="sidebar-nav">
         <li><a href="index.html">Pets</a></li>
-        <li><a href="listagem_reservas.html">Reservas</a></li>
         <li><a href="listagem_usuarios.html">Usuários</a></li>
         <li><a href="configuracoes.html">Configurações</a></li>
+        <li><a href="listagem_reservas.html" class="active">Reservas</a></li>
         <li><a href="login.html">Sair</a></li>
       </ul>
     </aside>
 
     <!-- Header / Cabeçalho Superior -->
     <header class="app-header">
-      <div class="header-title">Painel de Controle</div>
-      <!-- Gerenciado dinamicamente pelo app.js -->
-      <div class="header-user"></div>
+      <div class="header-user">
+        <a href="editor_perfil.html">
+          <img src="perfil_gerente.png" alt="Foto do Gerente" class="avatar">
+          <span>João da Silva</span>
+        </a>
+      </div>
     </header>
 
     <!-- Conteúdo Principal -->
     <main class="app-main">
-      <div class="page-header">
-        <div>
-          <span style="color: var(--text-muted); font-size: 0.85rem;">Reservas / Cadastro</span>
-          <h2 class="page-title">Fazer Reserva</h2>
-        </div>
-      </div>
+      <nav class="breadcrumb">Home / Reservas / Nova Reserva</nav>
 
-      <!-- Card do Formulário -->
-      <div class="card" style="max-width: 500px;">
-        <form action="listagem_reservas.html" method="get">
-          
+      <section class="painel">
+        <h2 class="page-title">Fazer reserva</h2>
+        <div class="form-wrap">
+          <form action="listagem_reservas.html" method="get">
           <div class="form-group">
-            <label for="pet">Pet*:</label>
-            <select id="pet" name="pet" class="form-control" required>
-              <option value="">Selecione um Pet</option>
-              <option value="1234">Max (Cachorro)</option>
-              <option value="5678">Ginger (Gato)</option>
-            </select>
+            <label for="pet">Pet *</label>
+            <select id="pet" name="pet" class="form-control" required><option value="">Selecione um Pet</option><option value="1234">Max (Cachorro)</option><option value="5678">Ginger (Gato)</option></select>
           </div>
 
           <div class="form-group">
-            <label for="inicio">Período - Início*:</label>
-            <input type="date" id="inicio" name="inicio" class="form-control" required>
-          </div>
-
-          <div class="form-group">
-            <label for="fim">Período - Fim*:</label>
-            <input type="date" id="fim" name="fim" class="form-control" required>
-          </div>
-
-          <div class="form-group">
-            <label for="notas">Notas:</label>
-            <textarea id="notas" name="notas" rows="4" class="form-control" placeholder="Observações de alimentação, remédios ou comportamento..."></textarea>
-          </div>
-
-          <div style="background-color: var(--bg-main); padding: 12px; border-radius: var(--border-radius); border: 1px solid var(--border-color); margin-top: 15px; margin-bottom: 20px;">
-            <span style="font-size: 0.9rem; color: var(--text-muted);">Cálculo estimado:</span>
-            <div style="font-size: 1.1rem; font-weight: bold; color: var(--primary-color); margin-top: 2px;">
-              Total das diárias: R$ 0,00
+            <label for="inicio">Período *</label>
+            <div class="periodo">
+              <input type="date" id="inicio" name="inicio" class="form-control" required aria-label="Início">
+              <input type="date" id="fim" name="fim" class="form-control" required aria-label="Fim">
             </div>
           </div>
 
-          <div style="display: flex; gap: 10px;">
-            <button type="submit" class="btn btn-primary">Salvar</button>
-            <a href="listagem_reservas.html" class="btn btn-secondary">Cancelar</a>
+          <div class="form-group">
+            <label for="notas">Notas</label>
+            <textarea id="notas" name="notas" rows="4" class="form-control" placeholder="Observações de alimentação, remédios ou comportamento..."></textarea>
           </div>
 
-        </form>
-      </div>
+          <div class="total-diarias">Total das diárias: <strong>R$ 0,00</strong></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary ico-save">Salvar</button>
+            <button type="reset" class="btn ico-reset">Limpar</button>
+          </div>
+          </form>
+        </div>
+      </section>
     </main>
 
   </div>
 
-  <!-- Inclusão do arquivo JS de navegação e lógica centralizada -->
-  <script src="app.js"></script>
 </body>
 </html>

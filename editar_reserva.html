@@ -2,94 +2,100 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hotel Pet - Editar Reserva</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="js/navegacao.js"></script>
 </head>
 <body>
 
   <div class="app-container">
-    
+
     <!-- Sidebar / Menu Lateral -->
     <aside class="app-sidebar">
       <div class="sidebar-brand">Hotel Pet</div>
       <ul class="sidebar-nav">
         <li><a href="index.html">Pets</a></li>
-        <li><a href="listagem_reservas.html">Reservas</a></li>
         <li><a href="listagem_usuarios.html">Usuários</a></li>
         <li><a href="configuracoes.html">Configurações</a></li>
+        <li><a href="listagem_reservas.html" class="active">Reservas</a></li>
         <li><a href="login.html">Sair</a></li>
       </ul>
     </aside>
 
     <!-- Header / Cabeçalho Superior -->
     <header class="app-header">
-      <div class="header-title">Painel de Controle</div>
-      <!-- Gerenciado dinamicamente pelo app.js -->
-      <div class="header-user"></div>
+      <div class="header-user">
+        <a href="editor_perfil.html">
+          <img src="perfil_gerente.png" alt="Foto do Gerente" class="avatar">
+          <span>João da Silva</span>
+        </a>
+      </div>
     </header>
 
     <!-- Conteúdo Principal -->
     <main class="app-main">
-      <div class="page-header">
-        <div>
-          <span style="color: var(--text-muted); font-size: 0.85rem;">Reservas / Edição</span>
-          <h2 class="page-title">Editar Reserva</h2>
+      <nav class="breadcrumb">Home / Reservas / Editar Reserva</nav>
+
+      <section class="painel">
+        <h2 class="page-title">Editar reserva</h2>
+        <div class="form-wrap">
+          <form action="listagem_reservas.html" method="get" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="proprietario">Proprietário *</label>
+            <input type="text" id="proprietario" name="proprietario" class="form-control" value="José da Silva" required readonly>
+          </div>
+          <div class="form-group">
+            <label for="pet">Pet *</label>
+            <input type="text" id="pet" name="pet" class="form-control" value="Max" required readonly>
+          </div>
+
+          <div class="form-group">
+            <label for="inicio">Período *</label>
+            <div class="periodo">
+              <input type="date" id="inicio" name="inicio" class="form-control" value="2026-08-20" required aria-label="Início">
+              <input type="date" id="fim" name="fim" class="form-control" value="2026-08-25" required aria-label="Fim">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="notas">Notas</label>
+            <textarea id="notas" name="notas" rows="4" class="form-control" placeholder="">Alérgico a frango.</textarea>
+          </div>
+          <div class="form-group">
+            <label for="status">Status *</label>
+            <select id="status" name="status" class="form-control" required><option value="Reservada">Reservada</option><option value="Em progresso">Em progresso</option><option value="Finalizada" selected>Finalizada</option></select>
+          </div>
+          <div class="form-group">
+            <label for="anotacoes_funcionarios">Anotações do funcionário</label>
+            <textarea id="anotacoes_funcionarios" name="anotacoes_funcionarios" rows="4" class="form-control" placeholder="">Pet alimentado no horário correto. Apresenta bom comportamento.</textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Imagens</label>
+            <div class="thumbs">
+              <span class="thumb" role="img" aria-label="Imagem atual"></span>
+              <label for="imagens" class="thumb thumb-add" title="Adicionar imagens">+</label>
+              <input type="file" id="imagens" name="imagens" multiple accept="image/*" class="visually-hidden">
+            </div>
+          </div>
+
+          <div class="total-diarias">Total das diárias: <strong>R$ 250,00</strong></div>
+
+          <label for="recibo" class="btn btn-roxo btn-sm ico-doc" style="margin-top: 14px;">Adicionar nota fiscal</label>
+          <input type="file" id="recibo" name="recibo" accept=".pdf,image/*" class="visually-hidden">
+          <div><a href="recibo.pdf" target="_blank" class="link-anexo ico-clip">recibo.pdf</a></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary ico-save">Salvar</button>
+            <button type="reset" class="btn ico-reset">Limpar</button>
+          </div>
+          </form>
         </div>
-      </div>
-
-      <!-- Card do Formulário -->
-      <div class="card" style="max-width: 500px;">
-        
-        <!-- Resumo dos dados fixos da Reserva -->
-        <div style="background-color: var(--bg-main); padding: 15px; border-radius: var(--border-radius); border: 1px solid var(--border-color); margin-bottom: 20px;">
-          <div style="display: grid; grid-template-columns: auto 1fr; gap: 8px 15px; font-size: 0.95rem;">
-            <span style="color: var(--text-muted); font-weight: bold;">ID:</span>
-            <span>#1234</span>
-            <span style="color: var(--text-muted); font-weight: bold;">Proprietário:</span>
-            <span>José da Silva</span>
-            <span style="color: var(--text-muted); font-weight: bold;">Pet:</span>
-            <span><strong>Max</strong></span>
-          </div>
-        </div>
-
-        <form action="listagem_reservas.html" method="get">
-
-          <div class="form-group">
-            <label for="anotacoes_funcionarios">Anotações dos Funcionários:</label>
-            <textarea id="anotacoes_funcionarios" name="anotacoes_funcionarios" rows="4" class="form-control">Pet alimentado no horário correto. Apresenta bom comportamento.</textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="imagens">Adicionar Imagens:</label>
-            <input type="file" id="imagens" name="imagens" multiple class="form-control" style="background-color: #fff;">
-          </div>
-
-          <div class="form-group">
-            <label for="status">Status*:</label>
-            <select id="status" name="status" class="form-control" required>
-              <option value="Reservada">Reservada</option>
-              <option value="Em progresso">Em progresso</option>
-              <option value="Finalizada" selected>Finalizada</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="recibo">Upload do Recibo/Nota:</label>
-            <input type="file" id="recibo" name="recibo" accept=".pdf,image/*" class="form-control" style="background-color: #fff;">
-          </div>
-
-          <div style="display: flex; gap: 10px; margin-top: 25px;">
-            <button type="submit" class="btn btn-primary">Salvar</button>
-            <a href="listagem_reservas.html" class="btn btn-secondary">Cancelar</a>
-          </div>
-
-        </form>
-      </div>
+      </section>
     </main>
 
   </div>
 
-  <!-- Inclusão do arquivo JS de navegação e lógica centralizada -->
-  <script src="app.js"></script>
 </body>
 </html>

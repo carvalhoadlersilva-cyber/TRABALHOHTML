@@ -2,47 +2,43 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hotel Pet - Login</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="js/navegacao.js"></script>
 </head>
 <body>
 
   <div class="auth-wrapper">
+    <div class="auth-imagem" role="img" aria-label="Imagem ilustrativa"></div>
+
     <div class="auth-card">
       <div class="auth-header">
         <h1>Hotel Pet</h1>
-        <p>Acesse sua conta para gerenciar o sistema</p>
       </div>
-
-      <form action="index.html" method="get">
+      <form id="form-login" action="index.html" method="get">
         <div class="form-group">
-          <label for="login">Login:</label>
-          <input type="text" id="login" name="login" class="form-control" required placeholder="Digite seu usuário">
+          <label for="login" class="visually-hidden">Login</label>
+          <input type="text" id="login" name="login" class="form-control" required placeholder="Login">
         </div>
 
         <div class="form-group">
-          <label for="senha">Senha:</label>
-          <input type="password" id="senha" name="senha" class="form-control" required placeholder="Digite sua senha">
+          <label for="senha" class="visually-hidden">Senha</label>
+          <input type="password" id="senha" name="senha" class="form-control" required placeholder="Senha">
         </div>
 
-        <div class="form-group" style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-          <label style="font-weight: normal; margin: 0; cursor: pointer;">
-            <input type="checkbox"> Mantenha-me conectado
-          </label>
-          <a href="#" style="font-size: 0.85rem;">Esqueci a senha</a>
+        <div class="auth-opcoes">
+          <label><input type="checkbox" id="lembrar" checked> Mantenha-me conectado</label>
+          <a href="#">Esqueci a senha</a>
         </div>
 
-        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Enviar</button>
+        <button type="submit" class="btn btn-primary btn-bloco">Enviar</button>
       </form>
 
-      <div class="auth-footer">
-        <p>ou</p>
-        <a href="criar_conta.html" class="btn btn-secondary" style="display: block; margin-top: 10px;">Criar uma conta</a>
-      </div>
+      <div class="auth-ou"><span>ou</span></div>
+      <a href="criar_conta.html" class="auth-link">Criar uma conta</a>
     </div>
   </div>
 
-  <!-- Inclusão do arquivo JS de navegação e lógica centralizada -->
-  <script src="app.js"></script>
 </body>
 </html>

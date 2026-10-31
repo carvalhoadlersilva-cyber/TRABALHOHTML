@@ -2,99 +2,85 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hotel Pet - Pets</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="js/navegacao.js"></script>
+  <script src="js/filtros.js" defer></script>
 </head>
 <body>
 
   <div class="app-container">
-    
+
     <!-- Sidebar / Menu Lateral -->
     <aside class="app-sidebar">
       <div class="sidebar-brand">Hotel Pet</div>
       <ul class="sidebar-nav">
-        <li><a href="index.html">Pets</a></li>
-        <li><a href="listagem_reservas.html">Reservas</a></li>
+        <li><a href="index.html" class="active">Pets</a></li>
         <li><a href="listagem_usuarios.html">Usuários</a></li>
         <li><a href="configuracoes.html">Configurações</a></li>
+        <li><a href="listagem_reservas.html">Reservas</a></li>
         <li><a href="login.html">Sair</a></li>
       </ul>
     </aside>
 
     <!-- Header / Cabeçalho Superior -->
     <header class="app-header">
-      <div class="header-title">Painel de Controle</div>
-      <!-- Gerenciado dinamicamente pelo app.js -->
-      <div class="header-user"></div>
+      <div class="header-user">
+        <a href="editor_perfil.html">
+          <img src="perfil_gerente.png" alt="Foto do Gerente" class="avatar">
+          <span>João da Silva</span>
+        </a>
+      </div>
     </header>
 
     <!-- Conteúdo Principal -->
     <main class="app-main">
-      <div class="page-header">
-        <div>
-          <span style="color: var(--text-muted); font-size: 0.85rem;">Home / Pets</span>
-          <h2 class="page-title">Listagem de Pets</h2>
-        </div>
-        <a href="novo_pet.html" class="btn btn-accent">+ Novo Pet</a>
-      </div>
+      <nav class="breadcrumb">Home / Pets</nav>
 
-      <!-- Card de Filtros de Pesquisa -->
-      <div class="card">
-        <div class="card-title">Pesquisar Pets</div>
-        <form action="index.html" method="get">
+      <section class="painel">
+        <h2 class="page-title">Pets</h2>
+        <div class="toolbar">
+          <a href="novo_pet.html" class="btn ico-plus">Novo Pet</a>
+        </div>
+
+        <form id="form-filtros" class="filtros" action="index.html" method="get">
           <div class="form-row">
             <div class="form-group">
-              <label for="id">ID:</label>
+              <label for="id">Id</label>
               <input type="text" id="id" name="id" class="form-control" placeholder="Ex: 1234">
             </div>
-            
             <div class="form-group">
-              <label for="nome">Nome:</label>
+              <label for="nome">Nome</label>
               <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome do pet">
             </div>
-
             <div class="form-group">
-              <label for="tipo">Tipo:</label>
-              <select id="tipo" name="tipo" class="form-control">
-                <option value="">Todos</option>
-                <option value="Cachorro">Cachorro</option>
-                <option value="Gato">Gato</option>
-              </select>
+              <label for="tipo">Tipo</label>
+              <select id="tipo" name="tipo" class="form-control"><option value="">Todos</option><option value="Cachorro">Cachorro</option><option value="Gato">Gato</option></select>
             </div>
-
             <div class="form-group">
-              <label for="raca">Raça:</label>
+              <label for="raca">Raça</label>
               <input type="text" id="raca" name="raca" class="form-control" placeholder="Raça">
             </div>
-
             <div class="form-group">
-              <label for="tamanho">Tamanho:</label>
+              <label for="tamanho">Tamanho</label>
               <input type="text" id="tamanho" name="tamanho" class="form-control" placeholder="Porte / Tamanho">
             </div>
           </div>
-
-          <div style="display: flex; gap: 10px; margin-top: 10px;">
-            <button type="submit" class="btn btn-primary">Pesquisar</button>
-            <button type="reset" class="btn btn-secondary">Limpar</button>
+          <div class="filtros-acoes">
+            <button type="submit" class="btn btn-primary ico-search">Pesquisar</button>
+            <button type="reset" class="btn ico-reset">Limpar</button>
           </div>
         </form>
-      </div>
 
-      <!-- Tabela de Registros -->
-      <div class="table-responsive">
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Foto</th>
-              <th>Nome</th>
-              <th>Tipo</th>
-              <th>Raça</th>
-              <th>Tamanho</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody>
+        <div class="table-responsive">
+          <table id="tabela-pets">
+            <thead>
+              <tr>
+                <th>Id</th><th>Foto</th><th>Nome</th><th>Tipo</th><th>Raça</th><th>Tamanho</th><th></th>
+              </tr>
+            </thead>
+            <tbody>
             <tr>
               <td>1234</td>
               <td><img src="max.png" alt="Max" class="avatar"></td>
@@ -104,8 +90,8 @@
               <td>Grande</td>
               <td>
                 <div class="actions-cell">
-                  <a href="editar_pet.html?id=1234" class="btn btn-secondary btn-sm">Editar</a>
-                  <a href="ver_pet.html?id=1234" class="btn btn-primary btn-sm">Visualizar</a>
+                  <a href="editar_pet.html" class="link-acao">Editar</a>
+                  <a href="ver_pet.html" class="link-acao">Visualizar</a>
                 </div>
               </td>
             </tr>
@@ -118,19 +104,34 @@
               <td>Pequeno</td>
               <td>
                 <div class="actions-cell">
-                  <a href="editar_pet.html?id=5678" class="btn btn-secondary btn-sm">Editar</a>
-                  <a href="ver_pet.html?id=5678" class="btn btn-primary btn-sm">Visualizar</a>
+                  <a href="editar_pet.html" class="link-acao">Editar</a>
+                  <a href="ver_pet.html" class="link-acao">Visualizar</a>
                 </div>
               </td>
             </tr>
-          </tbody>
-        </table>
-      </div>
-
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
+
   </div>
 
-  <!-- Inclusão do arquivo JS de navegação e lógica centralizada -->
-  <script src="app.js"></script>
+  <script>
+    // Liga cada campo do formulário a uma coluna da tabela (0 = primeira)
+    document.addEventListener('DOMContentLoaded', () => {
+      Filtros.iniciar({
+        form: '#form-filtros',
+        tabela: '#tabela-pets',
+        regras: [
+          { campo: 'id', coluna: 0, tipo: 'contem' },
+          { campo: 'nome', coluna: 2, tipo: 'contem' },
+          { campo: 'tipo', coluna: 3, tipo: 'exato' },
+          { campo: 'raca', coluna: 4, tipo: 'contem' },
+          { campo: 'tamanho', coluna: 5, tipo: 'contem' }
+        ]
+      });
+    });
+  </script>
 </body>
 </html>
